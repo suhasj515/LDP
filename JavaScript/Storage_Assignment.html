@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Storage</title>
+    </head>
+    <body>
+        <script>
+            var a=10
+            localStorage.setItem("a",a);
+            sessionStorage.setItem("a",a)
+            function increment(){
+                a=a+1;
+                localStorage.setItem("a",a);
+                sessionStorage.setItem("a",a)
+                console.log(localStorage.getItem("a"))
+                document.getElementById("count").innerHTML=localStorage.getItem("a")
+                document.getElementById("session").innerHTML=sessionStorage.getItem("a")
+            }
+
+            function closeSession(){
+                sessionStorage.clear();
+                document.getElementById("session").innerHTML=sessionStorage.getItem("a")
+            }
+        </script>
+        <button onclick="increment()">Increase</button>
+        <button onclick="closeSession()">Close Session</button>
+        <p>Local Storage:<p id="count"></p></p>
+        <p>Session Storage:<p id="session"></p></p>
+        
+    </body>
+</html>

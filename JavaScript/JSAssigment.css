@@ -1,0 +1,135 @@
+
+.container {
+    height: 100%;
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px 10px; 
+  }
+  .cell {
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+    text-align: center;
+    padding: 4rem;
+    box-shadow: 1px 1px 8px 1px #222121;
+  }
+  .cell-1 {
+    background: rgb(255, 255, 255);
+    
+  }
+  .cell-2 {
+    background: rgb(255, 255, 255);
+  }
+  .cell-3 {
+    color: rgb(0, 0, 0);
+    grid-gap: 1022px 10px;
+    background: rgb(255, 255, 255);
+    margin: 1rem;
+    box-shadow: 1px 1px 8px 1px #222121;
+    align-self: center;
+    
+    
+  }
+  .cell-3.active{
+    background: rgb(209, 175, 25);
+  }
+  .cell-4 {
+    background: rgb(255, 255, 255);
+    margin: 1rem;
+  }
+  .cell-5 {
+    background: blueviolet;
+  }
+  .cell-6 {
+    background: limegreen;
+  }
+  .cell-7 {
+    background: coral;
+  }
+  .cell-8 {
+    background: lightseagreen;
+  }
+  .cell-9 {
+    background: maroon;
+  }
+
+  .searchbar{
+    margin:0 auto;
+    width:575px;
+
+    
+    border:1px solid #dcdcdc;
+    height:45px;
+    border:none;
+    width:auto;
+    font-size:16px;
+    outline: none;
+    box-shadow: 1px 1px 8px 2px #dcdcdc;
+    
+  }
+
+  .searchbar:hover{
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+  }
+
+  .modal{
+      position: fixed;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50% ) scale(0);
+      border: 1px solid black;
+      border-radius: 10px;
+      z-index: 10;
+      background-color: white;
+      width: 500px;
+      max-width: 80%;
+  }
+
+  .modal.active{
+      transform: translate(-50%,-50%) scale(1);
+  }
+
+  .modal-header{
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid black;
+      background-color: rgb(23, 23, 230);
+  }
+
+  .modal-header .title{
+      font-size: 1.25rem;
+      font-weight: bold;
+     
+  }
+
+  .modal-header .close-button{
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+      font-size: 1.25 rem;
+      font-weight: bold;
+  }
+  .modal-body {
+      padding: 10px 15px;
+  }
+
+  #overlay{
+      position: fixed;
+      opacity: 0; 
+      top:0;
+      left:0;
+      right:0;
+      bottom: 0;
+      background-color: rgba(0, 0,0, .5) ;
+      pointer-events: none;
+  }
+
+  #overlay.active{
+      opacity: 1;
+      pointer-events: all;
+  }

@@ -1,0 +1,218 @@
+<html>
+    <head>
+        <title>Javascipt Assigment</title>
+        <link rel="stylesheet" href="JSAssigment.css">
+    </head>
+    <body>
+        
+<div class="container">
+    <div class="cell cell-1">Tables </br>
+        <input type="text" class="searchbar" id="searchbarTable" onchange="searchTable()" ></input>
+        <div id="tables" onload="onLoading()">
+        <!-- <div data-modal-target="#modal" id="table1" class="cell cell-3" class="dropZone" class="tt1"><div id="table1Name"></div>
+          <div style="display: flex; justify-content: space-around; align-items: center;">
+            <div id="table1TotalCost" style="font-size: medium; "></div>
+            <div style="font-size: medium;" >|</div>
+            <div id="table1TotalItems" style="font-size: medium; "></div>
+         </div>
+        </div> -->
+        <!-- <div data-modal-target="#modal2" id="table1" class="cell cell-3" class="dropZone"><div style="text-align: left;" id="table2Name"></div><div style="font-size: medium; text-align: left;height: 1%; float: left;">Rs </div><div id="table2TotalCost" style="font-size: medium; float: left; width: 20%;"></div><div style="font-size: medium; height: 0%;">| Total iteams:</div> <div id="table2TotalItems" style="font-size: medium; float: right; width: 30%; height: 2%;"></div></div> -->
+        <!-- <div data-modal-target="#modal3" id="table1" class="cell cell-3" class="dropZone"><div style="text-align: left;" id="table3Name"></div><div style="font-size: medium; text-align: left;height: 1%; float: left;">Rs </div><div id="table3TotalCost" style="font-size: medium; float: left; width: 20%;"></div><div style="font-size: medium; height: 0%;">| Total iteams:</div> <div id="table3TotalItems" style="font-size: medium; float: right; width: 30%; height: 2%;"></div></div> -->
+      </div> 
+    </div>
+    <div class="cell cell-2" >Menu
+    </br>
+        <input type="text" class="searchbar" id="searchbar" onchange="searchFun()" style="width: 50%; "></input><br/>
+        <div id="menu" onload="onLoading()"></div>
+        <!-- <div class="cell cell-4" draggable="true" id="item1"><div style="text-align: left;"id ="item1Name"> </div><div style="font-size: medium; text-align: left; float: left;">Rs:  <div style="font-size: medium; text-align: left; float: right;" id="item1Cost"></div></div></div> -->
+        <!-- <div class="cell cell-4" draggable="true" id="item2"><div style="text-align: left;"id ="item2Name"> </div><div style="font-size: medium; text-align: left; float: left;">Rs:  <div style="font-size: medium; text-align: left; float: right;" id="item2Cost"></div></div></div> -->
+        <!-- <div class="cell cell-4" draggable="true" id="item3"><div style="text-align: left;"id ="item3Name"> </div><div style="font-size: medium; text-align: left; float: left;">Rs:  <div style="font-size: medium; text-align: left; float: right;" id="item3Cost"></div></div></div> -->
+        <!-- <div class="cell cell-4" draggable="true" id="item4"><div style="text-align: left;"id ="item4Name"> </div><div style="font-size: medium; text-align: left; float: left;">Rs:  <div style="font-size: medium; text-align: left; float: right;" id="item4Cost"></div></div></div> -->
+        
+      
+       
+        
+  </div>
+   
+    
+</div>
+  
+  <div id="modal" class="modal">
+      <div class="modal-header">
+        <div class="modal-title">Table 1 details</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <table id="tab">
+          <tr>
+          <th>
+            SL no
+          </th>
+          <th>
+            Iteam
+          </th>
+          <th>
+            price
+          </th>
+          <th>
+            Qnos
+          </th>
+          </tr>
+
+          <tr>
+            <td id="sno11" ></td>
+            <td id="table1ItemNameModal1"></td>
+            <td id="table1TotalCostModal1"></td>
+            <td id="table1TotalItemsModal1"></td>
+            <!-- <td><input type="number" min="0" max="10" value="1" id="table1TotalItemsModal1"></input></td> -->
+            
+          </tr>
+          <tr>
+            <td id="sno12"></td>
+            <td id="table1ItemNameModal2"></td>
+            <td id="table1TotalCostModal2"></td>
+            <td id="table1TotalItemsModal2"></td>
+          </tr>
+          <tr>
+            <td id="sno13"></td>
+            <td id="table1ItemNameModal3"></td>
+            <td id="table1TotalCostModal3"></td>
+            <td id="table1TotalItemsModal3"></td>
+          </tr>
+          <tr>
+            <td id="sno14"></td>
+            <td id="table1ItemNameModal4"></td>
+            <td id="table1TotalCostModal4"></td>
+            <td id="table1TotalItemsModal4"></td>
+          </tr>
+          <tr>
+            <td>.</td>
+            <td>.</td>
+            <td id="totalcost1"></td>
+            <td>.</td>
+          </tr>
+        </table>
+      </div>
+
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Table 2 details</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      <table id="tab">
+        <tr>
+        <th>
+          SL no
+        </th>
+        <th>
+          Iteam
+        </th>
+        <th>
+          price
+        </th>
+        <th>
+          Qnos
+        </th>
+        </tr>
+
+        <tr>
+          <td id="sno21" ></td>
+          <td id="table2ItemNameModal1"></td>
+          <td id="table2TotalCostModal1"></td>
+          <td id="table2TotalItemsModal1"></td>
+        </tr>
+        <tr>
+          <td id="sno22"></td>
+          <td id="table2ItemNameModal2"></td>
+          <td id="table2TotalCostModal2"></td>
+          <td id="table2TotalItemsModal2"></td>
+        </tr>
+        <tr>
+          <td id="sno23"></td>
+          <td id="table2ItemNameModal3"></td>
+          <td id="table2TotalCostModal3"></td>
+          <td id="table2TotalItemsModal3"></td>
+        </tr>
+        <tr>
+          <td id="sno24"></td>
+          <td id="table2ItemNameModal4"></td>
+          <td id="table2TotalCostModal4"></td>
+          <td id="table2TotalItemsModal4"></td>
+        </tr>
+        <tr>
+          <td>.</td>
+          <td>.</td>
+          <td id="totalcost2"></td>
+          <td>.</td>
+        </tr>
+      </table>
+    </div>
+
+</div>
+
+
+<div id="modal3" class="modal">
+  <div class="modal-header">
+    <div class="modal-title">Table 3 details</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    <table id="tab">
+      <tr>
+      <th>
+        SL no
+      </th>
+      <th>
+        Iteam
+      </th>
+      <th>
+        price
+      </th>
+      <th>
+        Qnos
+      </th>
+      </tr>
+
+      <tr>
+        <td id="sno31" ></td>
+        <td id="table3ItemNameModal1"></td>
+        <td id="table3TotalCostModal1"></td>
+        <td id="table3TotalItemsModal1"></td>
+      </tr>
+      <tr>
+        <td id="sno32"></td>
+        <td id="table3ItemNameModal2"></td>
+        <td id="table3TotalCostModal2"></td>
+        <td id="table3TotalItemsModal2"></td>
+      </tr>
+      <tr>
+        <td id="sno33"></td>
+        <td id="table3ItemNameModal3"></td>
+        <td id="table3TotalCostModal3"></td>
+        <td id="table3TotalItemsModal3"></td>
+      </tr>
+      <tr>
+        <td id="sno34"></td>
+        <td id="table3ItemNameModal4"></td>
+        <td id="table3TotalCostModal4"></td>
+        <td id="table3TotalItemsModal4"></td>
+      </tr>
+      <tr>
+        <td>.</td>
+        <td>.</td>
+        <td id="totalcost3"></td>
+        <td>.</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+
+  <div id="overlay"></div>
+  <script src="JsAssigment.js"></script>
+    </body>
+</html>
