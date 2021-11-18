@@ -1,0 +1,56 @@
+Blinkist::
+
+1) atoms:
+	1)buttons:
+		1)Finish book
+		2)currently reading
+		3)finished
+		4)search
+		5)blinkist icon
+		6)explore
+		7)my library
+		8)account
+		
+	2) div:
+		1) book title
+		2) book author
+		3) Book time read
+		4) my library header
+
+	3) image:
+		1)book image
+		2)book backgroud
+2) molecules:
+	1) book details:
+		1)book title
+		2)book author
+		3)book time read
+	2)book div:
+		1)book image
+		2)book background
+	4) top nav elements:
+		1)explorer
+		2)my library
+		3)Account
+	5) icon search:
+		1)blinkist icon
+		2) search	
+3) organism:
+	1)complete book:
+		1)book details
+		2)book div
+	2)top nav bar:
+		1)icon search
+		2)top nav element
+	3)switch page bar:
+		1)currently reading
+		2) Finsihed
+4)template
+	1)top nav bar
+	2)My library header
+	3)switch page bar
+	4) complete book grid list
+4)pages:
+	1)currenlty reading
+	2) finished
+		

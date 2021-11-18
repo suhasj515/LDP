@@ -1,0 +1,21 @@
+A component is a part in react that returns some piece of jsx code that accepts props.
+
+Two types of components in react:
+	1) Functional component
+	2) Class component
+
+example and syntax of a component
+
+import React,{Component} from 'react'
+
+class Comp1 extends Component{
+    render(){
+        return(
+            <div>
+                This is a class component
+            </div>
+        )
+    }
+
+}
+export default Comp1

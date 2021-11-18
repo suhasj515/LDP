@@ -1,0 +1,58 @@
+1) funtional component:
+	-> It accepts props as a argument and returns a react element
+	-> Does'nt support react lifecycle method
+	-> For states react hooks can be used easily
+	-> Constructor not used
+	-> Knows as stateless as they generally do not have any logic
+	
+Ex: 
+	const FunctionalComp =() =>{
+
+    const [count,setCount]= useState(0)
+
+    const incCount =() =>{
+        setCount(count+1)
+    }
+
+	    return <div>
+		<button onClick={incCount}>increase</button>
+		<h2>{count}</h2>
+	    </div>
+	}
+
+	export default FunctionalComp
+	
+1) Class component:
+	-> It requres to extend the class with React.component
+	-> supports react lifecycle method
+	-> For states constructor has to be defined to use
+	-> Constructor used
+	-> Known as stateful as they have logic
+
+Ex: 
+	import React from "react";
+
+	class ClassComp extends React.Component{
+
+	    constructor(){
+		super()
+
+		this.state={
+		    count:0
+		}
+		this.countUp=this.countUp.bind(this)
+	    }
+	    countUp(){
+		this.setState({
+		    count: this.state.count +1
+		})
+	    }
+
+	    render(){
+		return <div>
+		    <button onClick={this.countUp}>increse</button>
+		    <h1>{this.state.count}</h1>
+		</div>
+	    }
+	}
+	export default ClassComp
