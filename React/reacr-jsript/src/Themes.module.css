@@ -1,0 +1,42 @@
+.buttonRead {
+    /* molecules/buttons */
+
+
+/* Auto Layout */
+
+/* Auto Layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px 0px;
+
+/* position: absolute; */
+width: 280px;
+height: 56px;
+left: 1156px;
+top: 98px;
+
+/* beta/secondary/500 */
+
+background: #0365F2;
+/* gamma/grey/100 */
+
+border: 1px solid #BAC9CF;
+box-sizing: border-box;
+border-radius: 4px;
+}
+
+
+.TabsText{
+    
+font-family: 'PT Sans';
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: left;
+
+}
