@@ -117,7 +117,7 @@ export default {
     }
   const bUrl =(e) =>{
       burl=e.target.value
-      console.log(burl,"urlbok")
+      console.log(BookObj.bookList)
     }
 
 

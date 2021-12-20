@@ -1,7 +1,6 @@
 import { Typography } from '@mui/material';
 import React from 'react';
 import TypographyText from './TypographyText';
-import { makeStyles } from '@mui/styles';
 
 export default {
     title: 'Atoms/Typography',

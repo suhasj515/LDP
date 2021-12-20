@@ -7,8 +7,14 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+
 export default function ModulePopUp(props) {
-  const {addBook,bTitle,bAuthor,bUrl,handleClose,handleClickOpen,open,bCategory}=props  
+  const {addBook,bTitle,bAuthor,bUrl,handleClose,handleClickOpen,open,bCategory,bcategory,error}=props  
+
+  console.log(bcategory,"Awdawdadwadwdaw")
 
 
   return (
@@ -26,6 +32,8 @@ export default function ModulePopUp(props) {
            id="outlined-search" 
             onChange={bTitle}
             style={{minWidth:'380px'}}
+            error={error}
+            helperText={error ? "Required field":""}
           />
           <DialogContentText style={{margin:'8px 0px',fontSize:'20px'}}>
             Book Author :
@@ -34,6 +42,8 @@ export default function ModulePopUp(props) {
            id="outlined-search" 
             onChange={bAuthor}
             style={{minWidth:'380px'}}
+            error={error}
+            helperText={error ? "Required field":""}
           />
 
           <DialogContentText style={{margin:'8px 0px',fontSize:'20px'}}>
@@ -43,16 +53,34 @@ export default function ModulePopUp(props) {
            id="outlined-search" 
             onChange={bUrl}
             style={{minWidth:'380px'}}
+            error={error}
+            helperText={error ? "Required field":""}
           />
 
           <DialogContentText style={{margin:'8px 0px',fontSize:'20px'}}>
             Book Category :
           </DialogContentText>
-          <TextField
+          {/* <TextField
            id="outlined-search" 
             onChange={bCategory}
             style={{minWidth:'380px'}}
-          />
+          /> */}
+
+          <InputLabel id="demo-simple-select-standard-label" ></InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={bcategory}
+          onChange={bCategory}
+          
+        >
+          {/* <MenuItem >
+            <em>None</em>
+          </MenuItem> */}
+          <MenuItem value={"Science"}>Science</MenuItem>
+          <MenuItem value={"Economics"}>Economics</MenuItem>
+          <MenuItem value={"Politics"}>Politics</MenuItem>
+          </Select>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>

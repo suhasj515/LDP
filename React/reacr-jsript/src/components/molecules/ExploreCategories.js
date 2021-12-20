@@ -6,30 +6,38 @@ import ScienceIcon from '@mui/icons-material/Science';
 import { makeStyles } from '@mui/styles';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function ExploreCategories(props) {
     const {onclickScience,onclickEconomics,onclickPolitics}=props
   const [anchorEl, setAnchorEl] = React.useState(null);
+   const [arrow,setArrow]=React.useState(KeyboardArrowDownIcon);
   const open = Boolean(anchorEl);
+
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+     setArrow(KeyboardArrowUpIcon)
   };
   const handleClose = () => {
     setAnchorEl(null);
+    setArrow(KeyboardArrowDownIcon)
+
   };
 
   const cstyles= makeStyles({
     ButtonCol: {
-        color : "black",
+        color : '#03314B',
         borderBottom: '2px solid white',
         '&:hover': {
             borderBottom: '2px solid #2CE080'
 
          }
     }
-
-
 })
+
+var Arrow=arrow
 const classes=cstyles()
 
 
@@ -43,7 +51,7 @@ const classes=cstyles()
         onClick={handleClick}
         className={classes.ButtonCol}
       >
-        Explore
+        Explore <Arrow/>
       </Button>
       <Menu 
         id="basic-menu"

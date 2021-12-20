@@ -1,21 +1,22 @@
-import React, { useEffect } from 'react'
 import { Grid } from '@mui/material'
-import { makeStyles } from '@mui/styles'
 import CardComponent from '../../molecules/CardComponent/CardComponent'
+import React from 'react'
 
 const GridLayoutBooks= (props) =>{
 
     const {status,BookObj,setBookObj}=props
 
+
+
     const mapBooks=   
-        BookObj.bookList.map((e)=>{
+        BookObj.map((e)=>{
             if(e.status===status)
             {
              return (
                  
-              <Grid key={e.titleBook} item xs={4}>
+              <Grid key={e.titleBook} item xs={4} data-testid="cardcomponenttest">
       
-              <CardComponent key={e.url} uid={e.titleBook} setBookObj={setBookObj} bookList={e}/>
+              <CardComponent  key={e.url} uid={e.titleBook} setBookObj={setBookObj} bookList={e}/>
               </Grid>
            );}
            

@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 
 const BottomPart =(props) =>{
 
-    const {BookObj,setBookObj,onclix}=props
+    const {BookObj,setBookObj}=props
 
     const styles= makeStyles({
         GridMargins: {
@@ -16,7 +16,7 @@ const BottomPart =(props) =>{
     const classes= styles()
     return(
         <div className={classes.GridMargins}>
-        <SwitchTab BookObj={BookObj} setBookObj={setBookObj} onclix={onclix}/>
+        <SwitchTab BookObj={BookObj} setBookObj={setBookObj}/>
         </div>
     )
 }

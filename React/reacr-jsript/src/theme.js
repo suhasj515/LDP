@@ -10,7 +10,7 @@ export const theme= createTheme({
         }
     },
     typography:{
-        fontFamily: '"CeraPRO-Regular", sans-serif, arial',
+        fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif",
         fontWeight:'bold',
         lineHeight: '24px',
         button:{

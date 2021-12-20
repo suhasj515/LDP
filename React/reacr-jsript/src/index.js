@@ -5,16 +5,32 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@mui/material';
 import { theme } from './theme';
-import {BrowserRouter} from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import {Provider} from 'react-redux'
+import  Store  from './components/poc/Store';
+import BookPages from './components/organisms/BookPages/BookPages';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <ThemeProvider theme={theme}>
-    <App />
-    </ThemeProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <Router>
+  <Provider store={Store}>
+  <ThemeProvider theme={theme}>
+    
+    <Routes>
+
+    < Route path="/" element={<App/>} />
+    < Route path="/The%20Grid" element={<BookPages bookId={0}/>} />
+    < Route path="/Rogue%20Waves" element={<BookPages bookId={1}/>} />
+    < Route path="/The%20Whole-Brain%20Child" element={<BookPages bookId={1}/>} />
+
+    </Routes>
+  
+  </ThemeProvider>
+  </Provider>
+  </Router>,
   document.getElementById('root')
 );
 

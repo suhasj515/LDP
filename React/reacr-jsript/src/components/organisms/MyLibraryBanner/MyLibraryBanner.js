@@ -23,7 +23,7 @@ export const MyLibraryBanner= () =>{
     const classes=styles()
     return(
         <div className={classes.GridMargins}>
-        <Typography style={{fontSize: '2.25rem',
+        <Typography data-testid="mybanner" style={{fontSize: '2.25rem',
       fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif",
       fontWeight: 800,
       padding: '3.125rem 0 5.5rem',

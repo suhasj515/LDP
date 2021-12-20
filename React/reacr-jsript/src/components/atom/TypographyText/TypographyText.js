@@ -1,8 +1,6 @@
 import Typography from '@mui/material/Typography';
 import  React from 'react';
-import Styles from '/home/suhasj/LDP/React/reacr-jsript/src/components/CardComponentCss.module.css';
 import { makeStyles } from '@mui/styles';
-import TimeVector from '/home/suhasj/LDP/React/reacr-jsript/src/components/Page/Vector.svg'
 
 
 
@@ -78,7 +76,7 @@ const TypographyText=(props)=>{
       }
     
     
-    return (<Typography  className={bct} >
+    return (<Typography  className={bct} data-testid="texttest" >
       {time} {children}
     </Typography>
     )
