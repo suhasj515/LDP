@@ -1,0 +1,32 @@
+1)
+select f.film_id,f.title,c.name,f.special_features as category from film f inner join film_category fc on f.film_id=fc.film_id inner join category c on fc.category_id=c.category_id where c.name='documentary' and f.special_features like '%Deleted Scenes%';
+
+select count(f.film_id) from film f inner join film_category fc on f.film_id=fc.film_id inner join category c on fc.category_id=c.category_id where c.name='documentary' and f.special_features like
+ '%Deleted Scenes%';
+ 
+ 
+ 
+ 2)
+ select st.staff_id,f.title,c.name,f.film_id from film_category fc inner join film f on fc.film_id=f.film_id inner join category c on fc.category_id=c.category_id inner join inventory inv on f.film_id=inv.film_id inner join store s on inv.store_id=s.store_id inner join staff st on s.store_id=st.store_id where st.first_name='jon' and  c.name='Sci-Fi';
+ 
+ select count(f.film_id) from film_category fc inner join film f on fc.film_id=f.film_id inner join category c on fc.category_id=c.category_id inner join inventory inv on f.film_id=inv.film_id inne
+r join store s on inv.store_id=s.store_id inner join staff st on s.store_id=st.store_id where st.first_name='jon' and  c.name='Sci-Fi';
+
+
+3)
+select sum(amount) from payment where rental_id in (select rental_id from rental where inventory_id in (select inventory_id from inventory where film_id in (select f.film_id from film_category fc
+inner join film f on fc.film_id=f.film_id inner join category c on fc.category_id=c.category_id where name='animation')));
+
+4)
+select category.name, count(customer.customer_id) AS NO_OF_CUSTOMER FROM customer
+INNER JOIN rental ON customer.customer_id=rental.customer_id
+INNER JOIN inventory ON inventory.inventory_id=rental.inventory_id
+INNER JOIN film_category ON film_category.film_id=inventory.film_id
+INNER JOIN category ON category.category_id=film_category.category_id
+WHERE customer.first_name='PATRICIA' AND customer.last_name='JOHNSON'
+GROUP BY category.name ORDER BY count(customer.customer_id) DESC LIMIT 3;
+
+5)
+select count(inv.film_id) from inventory inv inner join film f on f.film_id=inv.film_id inner join rental r on inv.inventory_id=r.inventory_id
+inner join customer c on r.customer_id=c.customer_id where first_name='susan' and last_name='wilson' and f.rating='r';
+

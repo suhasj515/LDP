@@ -1,0 +1,33 @@
+select f.film_id,f.title,c.name from film_category fc inner join film
+f on fc.film_id=f.film_id inner join category c on fc.category_id=c.category_id where name='animation';
+
+select f.film_id from film_category fc inner join film
+f on fc.film_id=f.film_id inner join category c on fc.category_id=c.category_id where name='animation';
+
+select inventory_id from inventory where film_id in (select f.film_id from film_category fc inner join film f on fc.film_id=f.film_id inner join category c on fc.category_id=c.category_id where name='animation');
+
+select rental_id from rental where inventory_id in (select inventory_id from inventory where film_id in (select f.film_id from film_category fc inner join film f on fc.film_id=f.film_id inner join category c on fc.category_id=c.category_id where name='animation'));
+
+
+
+
+
+
+
+
+
+CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`Ticket_BEFORE_INSERT` BEFORE INSERT ON `Ticket` FOR EACH ROW
+BEGIN
+	declare msg varchar(120)
+    if(select * from Ticket tic inner join 
+		Train t on tic.idTicket=t.idTicket
+        where (select departure_date from Train where idTrain=new.idTrain)
+		between (select departure_date from Train where idTicket in 
+							(select idTicket from Ticket where idCustomer=new.idCustomer))
+		and (select arrival_date from Train where idTicket in 
+							(select idTicket from Ticket where idCustomer=new.idCustomer)) )
+		
+        then 
+			set msg="Customer cannot be in two or more trains at same time"
+END
+

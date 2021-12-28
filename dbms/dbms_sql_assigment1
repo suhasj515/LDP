@@ -1,0 +1,22 @@
+1)
+select f.title,c.name from film f  inner join film_category fc on f.film_id=fc.film_id inner join category c on fc.category_id=c.category_id where c.name='COMEDY' and f.rating='PG-13';
+
+
+2)
+select count(f.film_id),c.name as category,f.title from rental r inner join inventory inv on r.inventory_id=inv.inventory_id inner join film f on inv.film_id=f.film_id inner join film_category fc
+on f.film_id=fc.film_id inner join category c on fc.category_id=c.category_id inner join customer cu on r.customer_id=cu.customer_id where c.name='horror' group by f.film_id order by count(fc.category_id) desc limit 2;
+
+
+
+3)
+select c.customer_id,c.first_name,cat.name,con.country from customer c inner join address a on c.address_id=a.address_id inner join city ct on a.city_id=ct.city_id inner join country con on ct.country_id=con.country_id inner join rental r on r.customer_id=c.customer_id inner joi
+n inventory inv on inv.inventory_id=r.inventory_id inner join film_category fmc on fmc.film_id=inv.film_id inner join category cat on cat.category_id=fmc.category_id where con.country='INDIA' and cat.name='Sports';
+
+
+
+4)
+select c.customer_id,c.first_name,concat(act.first_name,act.last_name),con.country from customer c inner join address a on c.address_id=a.address_id inner join city ct on a.city_id=ct.city_id inner join country con on ct.country_id=con.country_id inner join rental r on r.customer_id=c.customer_id inner join inventory inv on inv.inventory_id=r.inventory_id inner join film f on f.film_id=inv.film_id inner join film_actor flmactor on flmactor.film_id=f.film_id inner join actor act on act.actor_id= flmactor.actor_id where con.country='CANADA' and act.first_name='nick' and act.last_name='WAHLBERG'
+
+
+5)
+select count(a.actor_id) no_of_movies_played from film f inner join film_actor fc on f.film_id=fc.film_id inner join actor a on a.actor_id=fc.actor_id where a.first_name='sean' and a.last_name='williams';
