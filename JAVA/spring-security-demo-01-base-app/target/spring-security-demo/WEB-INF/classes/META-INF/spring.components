@@ -1,0 +1,2 @@
+com.spring.securitydemo.config.DemoAppConfig=org.springframework.stereotype.Component
+com.spring.securitydemo.controller.DemoController=org.springframework.stereotype.Component

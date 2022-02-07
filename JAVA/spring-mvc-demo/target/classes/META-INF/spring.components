@@ -1,0 +1,5 @@
+com.spring.mvc.demo.CustomerController=org.springframework.stereotype.Component
+com.spring.mvc.demo.DuplicateController=org.springframework.stereotype.Component
+com.spring.mvc.demo.HelloWorldController=org.springframework.stereotype.Component
+com.spring.mvc.demo.HomeController=org.springframework.stereotype.Component
+com.spring.mvc.demo.StudentController=org.springframework.stereotype.Component
